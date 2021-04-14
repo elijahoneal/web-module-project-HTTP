@@ -40,7 +40,7 @@ const EditMovieForm = (props) => {
 			const editedMovie = res.data.filter( movie => movie.id === Number(id) )
 			props.setMovies([...props.movies, props.movies.map( movie => {
 				if(movie.id === editedMovie.id) {
-					return editedMovie
+					return movie
 				}
 			} )])
 			push(`/movies/${id}`)
