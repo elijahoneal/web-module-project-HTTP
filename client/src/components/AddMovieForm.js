@@ -1,11 +1,12 @@
 import React, { useState} from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory , useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 import axios from 'axios';
 
 const AddMovieForm = (props) => {
 	const { push } = useHistory();
+    const { id } = useParams()
 	const [movie, setMovie] = useState({
 		title:"",
 		director: "",
