@@ -8,7 +8,7 @@ import MovieHeader from './components/MovieHeader';
 
 import EditMovieForm from './components/EditMovieForm';
 import FavoriteMovieList from './components/FavoriteMovieList';
-
+import AddMovieForm from './components/AddMovieForm'
 import axios from 'axios';
 
 const App = (props) => {
@@ -52,6 +52,14 @@ const App = (props) => {
           <FavoriteMovieList favoriteMovies={favoriteMovies}/>
         
           <Switch>
+            <Route path="/add-movie"
+            render={ () =>
+            <AddMovieForm
+              movies={movies}
+              setMovies={setMovies} />
+            }>
+            </Route>
+
             <Route path="/movies/edit/:id"
             render={ () =>
             <EditMovieForm
